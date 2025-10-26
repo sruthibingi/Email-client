@@ -1,0 +1,445 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0d1117;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #161b22;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 0 10px #000;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+input, textarea, button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #161b22;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 80px;
+  gap: 20px;
+  width: 100%;
+}
+
+.compose, .inbox, .sent {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+
+textarea {
+  height: 100px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #21262d;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #c9d1d9;
+}
+
+@media (max-width: 600px) {
+  .email-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+ :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#2563eb; --glass: rgba(255,255,255,0.03);
+      --maxwidth:1100px;
+      --radius:12px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#081223 0%, #071227 60%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; color:#e6eef8}
+    .app{max-width:var(--maxwidth);margin:28px auto;padding:18px;display:grid;grid-template-columns:260px 1fr;gap:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+
+    /* Sidebar */
+    .sidebar{display:flex;flex-direction:column;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(120deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .nav{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+    .nav button{background:transparent;border:0;color:var(--muted);padding:8px 10px;border-radius:8px;text-align:left;cursor:pointer}
+    .nav button.active{background:var(--glass);color:#fff}
+
+    /* Search */
+    .search{display:flex;gap:8px;align-items:center}
+    .search input{flex:1;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit}
+
+    /* Inbox/List + Pane */
+    .inbox-grid{display:grid;grid-template-columns:360px 1fr;gap:12px}
+    .list{overflow:auto;height:72vh}
+    .item{display:flex;gap:12px;padding:10px;border-radius:10px;cursor:pointer;align-items:flex-start}
+    .item:hover{background:rgba(255,255,255,0.02)}
+    .item.unread .subject{font-weight:700}
+    .avatar{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.03)}
+    .meta{flex:1}
+    .subject{font-size:15px;color:#e6eef8}
+    .snippet{font-size:13px;color:var(--muted);margin-top:6px}
+    .time{font-size:12px;color:var(--muted)}
+
+    /* Message pane */
+    .pane{height:72vh;overflow:auto;padding:18px}
+    .pane .from{display:flex;justify-content:space-between;align-items:center}
+    .controls{display:flex;gap:8px;margin-top:10px}
+    .btn{padding:8px 12px;border-radius:8px;border:0;background:var(--glass);color:inherit;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);}
+
+    /* Compose modal */
+    .compose{position:fixed;right:20px;bottom:20px;width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(2,6,23,0.7)}
+    .compose .row{display:flex;gap:8px;margin-bottom:8px}
+    .compose textarea{width:100%;height:160px;background:transparent;border-radius:8px;border:1px solid rgba(255,255,255,0.04);padding:10px;color:inherit}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .app{grid-template-columns:1fr; padding:12px}
+      .inbox-grid{grid-template-columns:1fr}
+      .sidebar{order:2;flex-direction:row;overflow:auto}
+      .brand{display:none}
+    }
+
+    /* Tiny util */
+    .muted{color:var(--muted)}
+    /* ==============================
+   Global Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #101010;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ==============================
+   Auth Pages (Sign In / Sign Up)
+============================== */
+.container {
+  width: 90%;
+  max-width: 400px;
+  background: #1b1b1b;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  color: #00b7ff;
+  font-size: 1.8em;
+}
+
+.container input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #121212;
+  color: #fff;
+  font-size: 1em;
+  transition: border 0.3s;
+}
+
+.container input:focus {
+  border-color: #00b7ff;
+  outline: none;
+}
+
+.container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: #00b7ff;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.container button:hover {
+  background: #008cd1;
+}
+
+.container p {
+  margin-top: 14px;
+  color: #aaa;
+}
+
+.container a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   Email App Layout
+============================== */
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  max-width: 1200px;
+  min-height: 90vh;
+  gap: 12px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #1b1b1b;
+  padding: 20px;
+  flex: 1 1 220px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #00b7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  color: #000;
+}
+
+/* Nav Buttons */
+.nav button {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 8px;
+}
+
+.nav button:hover,
+.nav button.active {
+  background: #00b7ff33;
+}
+
+/* Buttons */
+.btn {
+  background: #00b7ff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #008cd1;
+}
+
+.btn.primary {
+  background: #00b7ff;
+}
+
+.btn.primary:hover {
+  background: #008cd1;
+}
+
+/* Inbox Layout
+.inbox-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}*/
+
+.list {
+  flex: 1 1 320px;
+  background: #1b1b1b;
+  border-radius: 16px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.mail-item {
+  background: #222;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mail-item:hover {
+  background: #00b7ff22;
+}
+
+/* Right Pane */
+.pane {
+  flex: 3 1 500px;
+  background: #1b1b1b;
+  border-radius: 16px;
+  padding: 16px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* Message View */
+.from {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Compose Box */
+.compose {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 90%;
+  max-width: 500px;
+  background: #1b1b1b;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 183, 255, 0.4);
+  z-index: 10;
+}
+
+.compose textarea {
+  width: 100%;
+  height: 150px;
+  background: #121212;
+  color: #fff;
+  border-radius: 8px;
+  border: 1px solid #333;
+  padding: 8px;
+  resize: none;
+  margin-top: 8px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+/* Muted Text */
+.muted {
+  color: #aaa;
+}
+
+/* Scrollbar */
+.list::-webkit-scrollbar,
+.pane::-webkit-scrollbar {
+  width: 6px;
+}
+.list::-webkit-scrollbar-thumb,
+.pane::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar, .list, .pane {
+    width: 100%;
+    max-width: 100%;
+  }
+  .compose {
+    right: 10px;
+    left: 10px;
+  }
+}
